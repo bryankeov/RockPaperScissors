@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
         } else {
             return "You Win! Paper beats Scissors.";
         }
-    } else if (playerSelection.toLowerCase() === "paper") {       //Case insensitive input
+    } else if (playerSelection.toLowerCase() === "paper") {     //Case insensitive input
         if (computerSelection === "paper") {                    //Return string based on outcome
             return "Draw!";
         } else if (computerSelection === "rock") {
@@ -34,15 +34,27 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(playRound("Paper", computerPlay()))
 
-
-
-// Create function game()
-function game() {
+function game() {                                              // Create function game()
+    let user1 = 0;
+    let user2 = 0;
+    for (let i = 0; i < 5; i++) {                               // Loop function playRound
+        let result = playRound(prompt("Type in your choice"), computerPlay());   // prompt user for input and console.log each round
+        console.log(result)
+        if (result == "You Win!") {
+            user1 += 1;
+        } else if (result == "You Lose!") {
+            user2 += 1;
+        } else {
+            null
+    }
+    console.log(user1, user2)
 }
-//     Loop function playRound
-//     console.log each round
-//     return winner or loser after N games
-//     prompt user for inputs
-
+    if (user1 > user2) {                                        // Return winner or loser after N games
+        return console.log('You Win!');
+    } else if (user1 < user2) {
+        return console.log('You Lose!');
+    }
+    return console.log("No Winner");
+}
+game()
