@@ -41,20 +41,17 @@ function game() {                                              // Create functio
     for (let i = 0; i < 5; i++) {                               // Loop function playRound
         let result = playRound(prompt("Type in your choice"), computerPlay());   // prompt user for input and console.log each round
         console.log(result)
-        if (result == "You Win!") {
+        if (result.startsWith("You Win!")) {
             user1 += 1;
-        } else if (result == "You Lose!") {
+        } else if (result.startsWith("You Lose!")) {
             user2 += 1;
-        } else {
-            null
-    }
-    console.log(user1, user2)
-}
+        }
+    }   
+    console.log("Player: " + user1, "Computer: " + user2)
     if (user1 > user2) {                                        // Return winner or loser after N games
-        return console.log('You Win!');
+        console.log('You Win!');
     } else if (user1 < user2) {
-        return console.log('You Lose!');
+        console.log('You Lose!');
     }
-    return console.log("No Winner");
 }
 game()
