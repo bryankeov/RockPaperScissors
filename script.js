@@ -33,9 +33,19 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+const rock = document.getElementById('rock')
+    rock.addEventListener('click', () => console.log(playRound("rock", computerPlay())))
+
+const paper = document.getElementById('paper')
+    paper.addEventListener('click', () => console.log(playRound("paper", computerPlay())))
+
+const scissors = document.getElementById('scissors')
+    scissors.addEventListener('click', () => console.log(playRound("scissors", computerPlay())))
 
 
-function game() {                                              // Create function game()
+
+
+/*function game() {                                              // Create function game()
     let user1 = 0;
     let user2 = 0;
     for (let i = 0; i < 5; i++) {                               // Loop function playRound
@@ -53,5 +63,4 @@ function game() {                                              // Create functio
     } else if (user1 < user2) {
         console.log('You Lose!');
     }
-}
-game()
+} */
